@@ -1,0 +1,48 @@
+<h1>Task1:</h1>
+
+<h4>This task is about table presentation</h4>
+
+<ul>
+  <li>Find prepared mock data</li>
+  <li>Display mock data in the table below</li>
+  <li>Fix the 'Search by Column' feature</li>
+  <li>Maximum <strong>5</strong> data rows should be visible</li>
+  <li>Table headers should always be visible</li>
+  <li>Make the data pageable is another solution</li>
+</ul>
+
+<h4>Target preview:</h4>
+<button *ngIf="!showPreview" (click)="showPreview = true">Show</button>
+<button *ngIf="showPreview" (click)="showPreview = false">Hide</button>
+<div class="preview-area">
+  <img [src]="target" *ngIf="showPreview">
+</div>
+
+<h4>Your work:</h4>
+<div class="code-area">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>AVATAR</th>
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+      <th>EMAIL</th>
+      <th>GENDER</th>
+      <th>TITLE</th>
+      <th>COMPANY</th>
+    </tr>
+    <tr class="search-filters">
+      <!--TODO:search each column-->
+    </tr>
+    </thead>
+    <tbody>
+    <!--TODO:display mock data-->
+    <tr *ngIf="mockData.length === 0">
+      <td colspan="8">
+        <span>No Data</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
