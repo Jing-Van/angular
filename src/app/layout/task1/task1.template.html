@@ -32,17 +32,35 @@
       <th>TITLE</th>
       <th>COMPANY</th>
     </tr>
+
     <tr class="search-filters">
+      <th></th>
+      <th></th>
+      <th><<input [(ngModel)]="query"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <!--TODO:search each column-->
     </tr>
     </thead>
-    <tbody>
+
     <!--TODO:display mock data-->
-    <tr *ngIf="mockData.length === 0">
-      <td colspan="8">
-        <span>No Data</span>
-      </td>
+    <tr *ngFor="let item of items | search:'first_name, last_name, email, gender, title, company':query let i=index" >
+
+        <th *ngIf="i<5">{{ item.id}}</th>
+        <th *ngIf="i<5"><img src="{{item.avatar}}"></th>
+        <th *ngIf="i<5">{{ item.first_name}}</th>
+        <th *ngIf="i<5">{{ item.last_name}}</th>
+        <th *ngIf="i<5">{{ item.email}}</th>
+        <th *ngIf="i<5">{{ item.gender}}</th>
+        <th *ngIf="i<5">{{ item.title}}</th>
+        <th *ngIf="i<5">{{ item.company}}</th>
     </tr>
-    </tbody>
+    <tbody>
+
+
   </table>
 </div>

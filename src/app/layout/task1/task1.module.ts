@@ -7,6 +7,8 @@ export const routes = [
   {path: '', component:Task1Component, pathMatch: 'full'},
 ];
 
+
+
 @NgModule({
   declarations: [
     Task1Component
