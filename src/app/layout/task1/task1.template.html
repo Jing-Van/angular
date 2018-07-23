@@ -11,12 +11,7 @@
   <li>Make the data pageable is another solution</li>
 </ul>
 
-<h4>Target preview:</h4>
-<button *ngIf="!showPreview" (click)="showPreview = true">Show</button>
-<button *ngIf="showPreview" (click)="showPreview = false">Hide</button>
-<div class="preview-area">
-  <img [src]="target" *ngIf="showPreview">
-</div>
+
 
 <h4>Your work:</h4>
 <div class="code-area">
@@ -36,19 +31,19 @@
     <tr class="search-filters">
       <th></th>
       <th></th>
-      <th><<input [(ngModel)]="query"></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><input type="text" #filter (keyup)="0"/></th>
+      <th><input type="text" #filtera (keyup)="0"/></th>
+      <th><input type="text" #filterb (keyup)="0"/></th>
+      <th><input type="text" #filterc (keyup)="0"/></th>
+      <th><input type="text" #filterd (keyup)="0"/></th>
+      <th><input type="text" #filtere (keyup)="0"/></th>
       <!--TODO:search each column-->
     </tr>
     </thead>
 
     <!--TODO:display mock data-->
-    <tr *ngFor="let item of items | search:'first_name, last_name, email, gender, title, company':query let i=index" >
+    <tr *ngFor="let item of items | filter: {'first_name': filter.value, last_name: filtera.value, 
+    email: filterb.value, gender: filterc.value, title: filterd.value, company: filtere.value} let i=index" >
 
         <th *ngIf="i<5">{{ item.id}}</th>
         <th *ngIf="i<5"><img src="{{item.avatar}}"></th>
@@ -59,6 +54,7 @@
         <th *ngIf="i<5">{{ item.title}}</th>
         <th *ngIf="i<5">{{ item.company}}</th>
     </tr>
+
     <tbody>
 
 

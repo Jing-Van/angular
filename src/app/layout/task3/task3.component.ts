@@ -11,3 +11,5 @@ export class Task3Component {
   target_1 = require('../../../assets/targets/task3_1.png');
   target_2 = require('../../../assets/targets/task3_2.png');
 }
+
+// todo, beautify css of the logout

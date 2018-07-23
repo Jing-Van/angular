@@ -38,8 +38,8 @@ export class Task1Component implements OnInit{
         console.log(data);
       });
 
-
   }
+
 
   loadData(){
     //TODO load mockData 
@@ -47,5 +47,6 @@ export class Task1Component implements OnInit{
 
   filterArray(event) {
     //TODO filter data by column inputs
+    
   }
 }
